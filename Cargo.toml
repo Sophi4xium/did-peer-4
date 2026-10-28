@@ -12,3 +12,14 @@ serde = "1.0.229"
 serde_json = "1.0.154"
 sha2 = "0.11.1"
 x25519-dalek = "3.0.0"
+
+# ONNX Runtime ラッパー(2.0 は現時点で rc 版)
+ort = "2.0.0-rc.12"
+# 画像のデコード/リサイズ(必要な形式だけ有効化)
+image = { version = "0.25", default-features = false, features = ["jpeg", "png"] }
+# 特徴ベクトルの暗号化(AES-256-GCM)と文字列化(Base64)
+aes-gcm = "0.10"
+
+[[example]]
+name = "face_verify"
+path = "examples/face_verify/main.rs"
